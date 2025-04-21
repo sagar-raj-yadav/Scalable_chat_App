@@ -45,6 +45,23 @@ Note:-Redis sabhi servers ko ek dusre se milwa deta hai — ek beech ka pul ban 
 
 Is architecture mein, sabhi socket.io servers Redis ke through ek dusre se connected hote hain. Jab bhi ek user kisi message ko send karta hai, wo message Redis ke zariye sabhi connected servers tak pahunchta hai, jisse users kisi bhi server se dusre users ke sath communicate kar sakte hain, chahe wo kisi bhi server par connected ho. Ye setup scalability ko enhance karta hai aur real-time communication ko seamless banata hai.
 
+
+### Architecture
+Ek REDIS server ko setup karnege and ye redis AIVEN platform ke run karega .
+                                
+                _______________REDIS____  
+                |                       | 
+              server1                server2
+     _________|_____                  _____|______
+    |               |                |           |
+    user1        user2               user3       user4
+    
+Note:  yaha hum PUB/SUB architecture ka use karnege
+
+## TECH STACK?
+Node.Js , Next.js . Turbo Repo , Redis on Aiven
+
+
 ### How to Integrate Redis?
 
 
