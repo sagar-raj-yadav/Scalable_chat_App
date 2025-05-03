@@ -61,7 +61,42 @@ Note:  yaha hum PUB/SUB architecture ka use karnege
 ## TECH STACK?
 Node.Js , Next.js . Turbo Repo , Redis on Aiven
 
+## Turbo Repo?
 
-### How to Integrate Redis?
+setup Turb Repo project:- npx create-turbo@latest
+
+TurboRepo ek build system hai jo JavaScript/TypeScript monorepos ke liye bana hai (React, Next.js, Node.js, etc.). Iska kaam hai tere projects ko fast, smart aur efficient banana.
+
+=> Monorepo ->ek hi repository ke andar hum apna backend,frontend ,libraries sab rakh sakte h. Inn sab ko turbo.json manage karta h.
+
+=> run Monorepo -> npm run dev
+
+why we use Turbo repo?
+i.Turbo smartly samajhta hai ki kya change hua hai.
+ii.Sirf wahi part dubara build hota hai jo change hua ho.
 
 
+### setup
+1.make a folder named server inside (chatApp->apps->server)
+2.create package.json
+{
+  "name": "server",
+  "version": "1.0.0",
+  "private": true,
+}
+3.go to terminal
+4.npm install  server typescript --save-dev
+5.this will install typescript devDependency inside the package.json of server.
+6.go to inside server folder -> generate tsconfig.json => npx tsc --init
+
+# Install socket.io
+npm install -w server socket.io
+
+# EMIT and SUBSCRIBE message
+user1 message emit karta h(means server pe send karaa h)
+user2,user3..ye sab message ko subscribe kiye h to,ye message sabko chala jayega.
+
+
+     user1          user2                user3
+  EVENT Emit       EVENT subscribe      EVENT subscribe
+MESSAGE:hello        MESSAGE             MESSAGE
